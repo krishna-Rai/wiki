@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {% if entry %}
+        <a href="{% url 'editPage' title %}">
+            <img id="edit" src="https://www.fiveblocks.com/wp-content/uploads/2018/01/edit-wikipedia.png">
+        </a>
+        {{entry|safe}}
+    {% else %}
+        <h3>OOps. There is no such entry!</h3>
+    {% endif %}
+{% endblock %}
